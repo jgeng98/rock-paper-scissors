@@ -98,6 +98,10 @@
   color: #dfcdd1;
 }
 
+#replay:hover {
+  background-color: #83616e;
+}
+
 #pop-up-background {
   visibility: hidden;
   width: 100%;
