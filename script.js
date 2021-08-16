@@ -32,3 +32,17 @@ const computerPlay = function () {
   const playedMove = Math.floor(Math.random() * possibleMoves.length);
   return Moves[possibleMoves[playedMove]];
 };
+
+const playRound = function (userMove, compMove) {
+  if (userMove === compMove) {
+    return Result.TIE;
+  } else if (
+    (userMove === Moves.PAPER && compMove === Moves.ROCK) ||
+    (userMove === Moves.ROCK && compMove === Moves.SCISSORS) ||
+    (userMove === Moves.SCISSORS && compMove === Moves.PAPER)
+  ) {
+    return Result.WIN;
+  } else {
+    return Result.LOSE;
+  }
+};
