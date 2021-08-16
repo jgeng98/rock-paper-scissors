@@ -13,6 +13,13 @@ const result = document.querySelector("#result");
 const popUpBackground = document.querySelector("#pop-up-background");
 const popUp = document.querySelector("#pop-up");
 
+const popElement = function (element) {
+  element.animate([{ transform: "scale(1.25)" }, { translate: "scale(1)" }], {
+    duration: 150,
+    easing: "ease-in-out",
+  });
+};
+
 // variables and enums
 const numRounds = 5;
 
@@ -122,6 +129,10 @@ const updateLastMoves = function (userMove, compMove) {
   // replace content in moves box with most recent moves for both user and computer
   lastUserMove.append(newUserMove);
   lastCompMove.append(newCompMove);
+
+  // make elements pop in move box
+  popElement(newUserMove);
+  popElement(newCompMove);
 };
 
 const updateScore = function (roundResult) {
