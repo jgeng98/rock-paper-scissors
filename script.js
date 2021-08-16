@@ -10,6 +10,8 @@ const userScore = document.querySelector("#user-score");
 const compScore = document.querySelector("#comp-score");
 const replay = document.querySelector("#replay");
 const result = document.querySelector("#result");
+const popUpBackground = document.querySelector("#pop-up-background");
+const popUp = document.querySelector("#pop-up");
 
 // variables and enums
 const numRounds = 5;
@@ -172,10 +174,6 @@ const checkWinner = function (currentUserScore, currentCompScore) {
 };
 
 const endScreen = function (winner) {
-  // selects the end screen elements
-  const popUpBackground = document.querySelector("#pop-up-background");
-  const popUp = document.querySelector("#pop-up");
-
   // changes the end screen popup message depending on the winner
   if (winner === Player.USER) {
     result.textContent = " won! Congrats 🙌";
@@ -188,7 +186,19 @@ const endScreen = function (winner) {
   }
 };
 
-const resetGame = function () {};
+const resetGame = function () {
+  // reset score to 0
+  userScore.textContent = "0";
+  compScore.textContent = "0";
+  // reset last moves to "?" and reset move borders
+  lastUserMove.textContent = "?";
+  lastCompMove.textContent = "?";
+  lastUserMove.style.border = "4px solid #83616e";
+  lastCompMove.style.border = "4px solid #83616e";
+  // hide popup and popup background again
+  popUp.style.visibility = "hidden";
+  popUpBackground.style.visibility = "hidden";
+};
 
 // event listeners
 moveOptions.forEach((move) => {
