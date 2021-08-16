@@ -81,7 +81,7 @@ const clickMove = function (event) {
   // updates the scoreboard
   updateScore(roundResult);
 
-  // checks if there was a winner
+  // displays the end screen if there was a winner (reached 5 points)
   checkWinner(parseInt(userScore.textContent), parseInt(compScore.textContent));
 };
 
@@ -135,6 +135,9 @@ const updateScore = function (roundResult) {
         userScore.textContent,
         currentUserScore
       );
+      // changes the move borders to indicate the winner
+      lastUserMove.style.border = "4px solid #99e599b0";
+      lastCompMove.style.border = "4px solid #ff7770a0";
       break;
     case Result.LOSE:
       // adds one to current comp score and updates the scoreboard
@@ -143,7 +146,14 @@ const updateScore = function (roundResult) {
         compScore.textContent,
         currentCompScore
       );
+      // changes the move borders to indicate the winner
+      lastUserMove.style.border = "4px solid #ff7770a0";
+      lastCompMove.style.border = "4px solid #99e599b0";
       break;
+    case Result.TIE:
+      // changes the move borders to indicate it was a tie
+      lastUserMove.style.border = "4px solid #EEE29Fc0";
+      lastCompMove.style.border = "4px solid #EEE29Fc0";
   }
 };
 
