@@ -148,7 +148,7 @@
   margin: 20px;
   border: 4px solid #83616e;
   color: #dfcdd1;
-  border-radius: 99px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -197,7 +197,7 @@
   background-color: #222526;
 }
 
-@media screen {
+@media screen and (max-width: 500px) {
   #user-info,
   #comp-info {
     font-size: 3vw;
