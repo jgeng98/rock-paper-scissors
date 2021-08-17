@@ -133,7 +133,6 @@
   font-weight: bold;
   margin: 25px;
   padding: 25px;
-  /* font-size: min(10vw, 80px); */
 }
 
 #moves {
@@ -151,7 +150,6 @@
   color: #dfcdd1;
   border-radius: 99px;
   cursor: pointer;
-  /* font-size: min(10vw, 80px); */
 }
 
 .icon:hover {
@@ -197,4 +195,34 @@
   padding: 10px;
   border-radius: 5px;
   background-color: #222526;
+}
+
+@media screen {
+  #user-info,
+  #comp-info {
+    font-size: 3vw;
+  }
+
+  #user-move,
+  #comp-move {
+    font-size: 8vw;
+  }
+
+  .icon {
+    font-size: 10vw;
+  }
+
+  #user-score,
+  #divider,
+  #comp-score {
+    font-size: 20px;
+  }
+
+  #score {
+    width: 120px;
+  }
+
+  #pop-up h3 {
+    text-align: center;
+  }
 }
